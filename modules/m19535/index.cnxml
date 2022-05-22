@@ -1,0 +1,146 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>VI Control de Temperatura</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>982698d4-df87-4e8e-834d-88d3d0fa286d</md:uuid>
+</metadata>
+  <!--When CNXML 0.6 comes out, this module will need to be revised to
+  include para in the items indicated-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm7930704">
+	<section id="s1">
+	  <title>Panel Frontal</title>
+	  <list id="s1l1" list-type="enumerated"><item>
+	      Abrir el <link document="m12235">VI Promedio de temperatura</link>.
+	    </item>
+	    <item>
+	      Modificar el panel frontal según se muestra en la <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idm2566880" alt=""><image src="../../media/tempcontrol.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s1l1l1" list-type="enumerated"><item>
+		  Colocar en el panel frontal una caja con los bordes izquierdo y derecho suaves (horizontal smooth box), situada en la paleta
+		  <code>Controls&gt;&gt;All Controls&gt;&gt;Decorations</code>. Este objeto decorativo agrupa los elementos de
+		   <code>Analysis</code>.
+		</item>
+		<item>
+		  Crear un duplicado del interruptor booleano <code>Power</code>. Etiquetar el nuevo interruptor como <code>ANALYSIS</code>.
+		   Hacer clic con el botón derecho sobre el interruptor y seleccionar en el menú desplegable <code>Mechanical Action&gt;&gt;Switch When Pressed</code>.
+		</item>
+		<item>
+		  Colocar en el panel frontal un control numérico, situado en la paleta
+		  <code>Controls&gt;&gt;Numeric Controls</code>. Etiquetar el control <code>High Limit</code>.
+		</item>
+		<item>
+		  Colocar un LED redondo en el panel frontal, situado en la paleta
+		  <code>Controls&gt;&gt;LEDs</code>. Etiquetar el indicador como <code>Warning</code>.
+		</item>
+		<item>
+		  Colocar también en el panel frontal un indicador numérico situado en la paleta
+		  <code>Controls&gt;&gt;Numeric Indicators</code>. Etiquetar este indicador como <code>High
+		    Value</code>.
+		</item>
+		<item>
+		  Hacer clic con el botón derecho sobre la pantalla del visualizador y seleccionar en el menú contextual <code>Visible
+		    Items&gt;&gt;Digital Display</code> para mostrar los valores digitales.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Seleccionar <code>File&gt;&gt;Save As</code> para salvar el instrumento virtual como
+	      <code>Control de Temperatura.vi</code> en el directorio
+	      <code>C:\Exercises\LabVIEW Basics I</code>.
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Diagrama de Bloques</title>
+	  <list id="s2l1" list-type="enumerated"><item>
+	      Modificar el Diagrama de Bloques como se muestra en la <link target-id="s2l1f1"/>. Agrandar el <code>While Loop</code> para crear espacio donde insertar los elementos nuevos.
+	      <figure id="s2l1f1">
+		<media id="idm9585344" alt=""><image src="../../media/tempcontrolbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated"><item>
+		    <media id="idm7108288" alt=""><image src="../../media/case.png" mime-type="image/png"/></media>
+		  Colocar en el diagrama de bloques la estructura <code>Case</code>,
+		  situada en la paleta <code>Functions&gt;&gt;Execution Control</code>. Conectar el control 
+		  <code>Analysis</code> al terminal 
+		  <code>selector</code> terminal. Hacer clic en el botón
+		  <code>decrement</code> o <code>increment</code> para 
+		  elegir el case <code>True</code>.
+		</item>
+		<item>
+		    <media id="idm5061968" alt=""><image src="../../media/greaticon.png" mime-type="image/png"/></media>
+		  Colocar en el diagrama de bloques dos funciones <code>Greater?</code>, situadas en la paleta <code>Functions&gt;&gt;Arithmetic
+		    &amp; Comparison&gt;&gt;Express Comparison</code>. La primera función  <code>Greater?</code> devuelve 
+		  <code>True</code> si la temperatura rebasa <code>High
+		    Limit</code>. En cualquier otro caso, la función devuelve
+		  <code>False</code>.
+		</item>
+		<item>
+		    <media id="idm14989632" alt=""><image src="../../media/selecttherm.png" mime-type="image/png"/></media>
+		  Colocar en el diagrama de bloques la función <code>Select</code>
+		  situada en la paleta <code>Functions&gt;&gt;Arithmetic
+		  &amp; Comparison&gt;&gt;Express Comparison</code>. Esta función devuelve el mayor de los 
+		  dos valores.
+		</item>
+		<item>
+		  Completar el caso <code>True</code> de la <code>Estructura Case</code> como se muestra en la <link target-id="s2l1f1"/>.
+		</item>
+		<item>
+		  Hacer clic en el botón <code>decrement</code> o <code>increment</code> para 
+		  elegir el case <code>False</code>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Completar el caso <code>False</code> de la <code>Estructura Case</code>, mostrado en la <link target-id="s2l1f2"/>.
+	      <figure id="s2l1f2">
+		<media id="idm16605520" alt=""><image src="../../media/tempcontrolfalse.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l2" list-type="enumerated"><item>
+		  Hacer clic con el botón derecho sobre el túnel que conecta con el 
+		  <code>Warning Indicator</code> y seleccionar en el menú que aparece
+		  <code>Create&gt;&gt;Constant</code>. Usar la herramienta
+		  <code>Operating</code> para cambiar la constante a <code>False</code>.
+		</item>
+		<item>
+		  Hacer clic con el botón derecho sobre el túnel que conecta con el indicador <code>High
+		    Value</code> y seleccionar en el menú que aparece
+		  <code>Create&gt;&gt;Constant</code>. Escribe <code>-99999</code>
+		  como valor de la constante.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Salvar el VI. Este VI se volverá a usar más adelante a lo largo del curso.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Ejecutar el VI</title>
+	  <list id="s3l1" list-type="enumerated"><item><!--needs para-->
+	      <!--para-->
+	      Mostrar el Panel Frontal, escribir <code>80</code> en
+	      <code>High Limit</code>, y ejecutar el VI.
+	      <!--para-->
+	      Si <code>ANALYSIS</code> está apagado, el VI apaga el LED
+	      <code>Warning</code> y muestra un valor de
+	      <code>-99999</code> en <code>High Value</code>.
+	      <!--para-->
+
+	      Si <code>ANALYSIS</code> está encendido, el VI enciende el LED
+	      <code>Warning</code> cuando la temperatura se encuentre por encima del valor 
+	      <code>High Limit</code> y muestra el valor de temperatura actual 
+	      <code>High Value</code>.
+	    </item>
+	    <item>
+	      Cerrar el VI.
+	    </item>
+</list>
+	</section>
+      </problem>
+    </exercise>
+
+  </content>
+  
+</document>

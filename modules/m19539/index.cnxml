@@ -1,0 +1,54 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Resumen, trucos y pistas sobre la toma de decisiones en un VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>92467e14-65e1-426a-abe6-008c80502569</md:uuid>
+</metadata>
+
+  <content>
+    <list id="l1"><item>
+	La función <code>Select</code> permite elegir entre dos entradas
+	en función  del valor que tome una tercera entrada booleana.
+      </item>
+      <item>
+	Una estructura <code>Case</code> tiene dos o más subdiagramas o casos.
+	Solo se puede ver uno de los subdiagramas cada vez, y la estructura ejecuta 
+	solo un caso cada vez.
+      </item>
+      <item>
+	Si el terminal selector del caso fuera una variable Booleana, la 
+	estructura tendría un caso <code>True</code> y un caso
+	<code>False</code>. Si el terminal selector fuera un entero,
+	una cadena, o un valor de tipo enumerado, la estructura entonces podría
+	hasta 
+	<m:math>
+	  <m:apply>
+	    <m:minus/>
+	    <m:apply>
+	      <m:power/>
+	      <m:cn>2</m:cn>
+	      <m:cn>31</m:cn>
+	    </m:apply>
+	    <m:cn>1</m:cn>
+	  </m:apply>
+	</m:math> casos.
+      </item>
+      <item>
+	Las entradas están disponibles para todos los subdiagramas de una 
+	estructura <code>Case</code>, pero los subdiagramas no tienen porque usar todas las entradas. Si
+	al menos un túnel de salida queda sin definir, todos los túneles de salida en la estructura
+	aparecerán como cuadros blancos.
+      </item>
+      <item>
+	Cuando se crea un subVI a partir de una estructura <code>Case</code>, hay que conectar
+	la entrada de <code>error</code> al terminal selector, y
+	colocar en todos los subVI el código en el caso <code>No Error</code> para
+	prevenir la ejecución del subVI si se recibe un error.
+      </item>
+      <item>
+	Los <code>Formula Node</code> son útiles para ecuaciones que tienen muchas variables o 
+	que sean complicadas de implementar o para usar código basado en texto ya existente.
+	Cada sentencia de la ecuación debe terminar con un punto y coma (<code>;</code>).
+      </item>
+    </list>
+  </content>
+  
+</document>

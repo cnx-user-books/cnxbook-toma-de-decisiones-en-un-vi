@@ -1,0 +1,47 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Formula Node</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>75d1fc11-3e6f-438d-aedb-ab51599a9162</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1"><code>Formula Node</code> se usa para realizar operaciones
+      matemáticas en LabVIEW. Para obtener una funcionalidad añadida se puede
+      enlazar con la aplicación matemática MATLAB®.
+    </para>
+    <section id="s1">
+      <title>Formula Node</title>
+      <para id="s1p1"><code>Formula Node</code> es un nodo basado en texto que se utiliza para realizar 
+	operaciones matemáticas en el diagrama de bloques. Los <code>Formula Node</code> son útiles para ecuaciones
+	que tienen muchas variables o que sean complicadas de resolver o para usar código basado en texto ya existente.
+	Es mucho más fácil copiar y pegar el código basado en texto en un 
+	<code>Formula Node</code> que representarlo gráficamente en el diagrama de bloques.
+      </para>
+      <para id="s1p2">Para crear los terminales de entrada y salida de un <code>Formula
+	Node</code> se puede hacer clic con el botón derecho sobre el borde del nodo y 
+	seleccionar en el menú contextual <code>Add Input</code> o <code>Add Output</code>, y después introducir la 
+	variable para la entrada o para la salida. Cada sentencia debe terminar con un punto y coma (<code>;</code>).
+      </para>
+      <para id="s1p3">Los <code>Formula Node</code> también se pueden usar para llevar a cabo una toma de decisiones. 
+	El diagrama mostrado en la <link target-id="s1f1"/> muestra 2 maneras
+	diferentes de usar una sentencia <code>if-then</code> en un
+	<code>Formula Node</code>. Las 2 estructuras tendrán el mismo resultado.
+      </para>
+      <figure id="s1f1">
+	<media id="idp7266480" alt=""><image src="../../media/formnodeex.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s1p4">El <code>Formula Node</code> puede ejecutar muchas operaciones diferentes. Consultar la ayuda de <cite><cite-title>LabVIEW</cite-title></cite> para una 
+	mayor información sobre las funciones, operaciones y sintaxis de los <code>Formula Node</code>.
+      </para>
+      <note id="idp7311136">El VI Express <code>Formula</code> situado en la paleta
+	<code>Functions&gt;&gt;Arithmetic &amp; Comparison</code>
+	usa un interface de calculadora para crear fórmulas matemáticas.
+	Se puede usar este VI Express para ejecutar la mayoría de las operaciones 
+	que puede realizar una calculadora científica básica.
+	Consultar la ayuda de <cite><cite-title>LabVIEW</cite-title></cite> para una 
+	mayor información sobre los VI Express <code>Formula</code>.
+      </note>
+    </section>
+
+  </content>
+  
+</document>

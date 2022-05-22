@@ -1,0 +1,39 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Toma de decisiones con la función Select</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>99cc8f9f-fa61-4a0b-b65f-8389313f126a</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">Los instrumentos virtuales descritos en este curso se ejecutan de manera
+      ordenada siguiendo el flujo de datos. Pero hay casos en los que hay que tomar decisiones. Por ejemplo, si sucede <emphasis>a</emphasis>, 
+      hacer <emphasis>b</emphasis>; o si sucede <emphasis>c</emphasis>, hacer <emphasis>d</emphasis>.
+</para>
+    <para id="p2">En programas basados en texto, esto se hace mediante sentencias
+      if - else, switch - case, etc. LabVIEW incluye muchas y diferentes maneras de tomar
+      decisiones. El método más simple de todos ellos es la función <code>Select</code>.
+         </para>
+    <section id="s1">
+      <title>Select Function</title>
+      
+      <para id="s1p1"><media id="idm3168400" alt=""><image src="../../media/selecttherm.png" mime-type="image/png"/></media>
+	La función <code>Select</code>, situada en la paleta
+	<code>Functions&gt;&gt;Express Comparison</code>, hace una selección
+	entre dos valores según el valor que tome una entrada Booleana. 
+	Si la entrada Booleana<code>s</code> es <code>Cierta</code>, esta
+	función devuelve el valor conectado a la entrada <code>t (true)</code>.
+	Si la entrada Booleana es <code>Falsa</code>, la función devuelve 
+	el valor conectado a la entrada <code>f (false)</code>.
+      </para>
+      <para id="s1p2">El ejercicio <link document="m12209">Thermometer VI</link> utiliza la función <code>Select</code> para determinar si se desea la salida en grados Centígrados o en grados Fahrenheit, tal como se observa en el diagrama de bloques de la <link target-id="s1f2"/>.
+     </para>
+      <figure id="s1f2">
+	<media id="idm43952" alt=""><image src="../../media/thermbd.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s1p3">Si la decisión a tomar tiene una complejidad mayor que la que se puede 
+	tomar con la función <code>Select</code>, entonces se requerirá una estructura <code>Case</code>.
+      </para>
+    </section>
+
+  </content>
+  
+</document>

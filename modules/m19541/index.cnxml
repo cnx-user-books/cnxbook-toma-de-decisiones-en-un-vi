@@ -1,0 +1,111 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Más ejercicios sobre la toma de decisiones en un VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c52346bc-40de-4750-963f-0e3abef23735</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp5826288">
+	<para id="e1p1">Construir un VI que haga uso de un <code>Formula Node</code> para
+	  calcular las siguientes ecuaciones:
+	  <m:math display="block">
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci><m:msub>
+		  <m:mi>y</m:mi>
+		  <m:mi>1</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>x</m:ci>
+		  <m:cn>3</m:cn>
+		</m:apply>
+		<m:apply>
+		  <m:power/>
+		  <m:ci>x</m:ci>
+		  <m:cn>2</m:cn>
+		</m:apply>
+		<m:cn>5</m:cn>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	  <m:math display="block">
+	    <m:apply>
+	      <m:eq/>
+	      <m:ci><m:msub>
+		  <m:mi>y</m:mi>
+		  <m:mi>2</m:mi>
+		</m:msub></m:ci>
+	      <m:apply>
+		<m:plus/>
+		<m:apply>
+		  <m:times/>
+		  <m:ci>m</m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+		<m:ci>b</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:math>
+	</para>
+	<para id="e1p2">Usar un único <code>Formula Node</code> para ambas ecuaciones
+	  y terminar cada ecuación con un punto y coma (<code>;</code>).
+	</para>
+	<para id="e1p3">Salvar el VI como <code>Ecuaciones.vi</code> en el directorio
+	  <code>C:\Exercises\LabVIEW Basics I</code>.
+	</para>
+      </problem>
+    </exercise>
+    <exercise id="e2">
+      <problem id="idp3376240">
+	<para id="e2p1">Construir un VI que funcione como una calculadora. En el panel frontal,
+	  usar controles numéricos para introducir dos números y un
+	  indicador numérico para mostrar el resultado de la operación
+	  (<code>Add</code>, <code>Subtract</code>,
+	  <code>Divide</code>, or <code>Multiply</code>) que el VI
+	  ejecute con dichos números. Usar un control deslizante para especificar
+	  la operación a realizar.
+	</para>
+	<para id="e2p2">Salvar el VI como <code>Calculadora_4.vi</code> en el directorio
+	  <code>C:\Exercises\LabVIEW Basics I</code>.
+ 	</para>
+      </problem>
+    </exercise>
+    <exercise id="e3">
+      <problem id="idp101072">
+	<para id="e3p1">Modificar el <link document="m12246">Square Root VI</link> para que ejecute todas
+	  las operaciones y el chequeo de la condición usando el 
+	  <code>Formula Node</code>.
+	</para>
+	<para id="e3p2">Seleccionar <code>File&gt;&gt;Save As</code> para salvar el VI como
+	  <code>Raiz Cuadrada 2.vi</code> en el directorio
+	  <code>C:\Exercises\LabVIEW Basics I</code>.
+	</para>
+      </problem>
+    </exercise>
+    <exercise id="e4">
+      <problem id="idp6686544">
+	<para id="e4p1">Construir un VI con dos entradas, <code>Threshold</code> y
+	  <code>Input Array</code>, y una salida, <code>Output
+	  Array</code>. <code>Output Array</code> contiene los valores de
+	  <code>Input Array</code> que son mayores que el
+	  <code>Threshold</code>.
+	</para>
+	<para id="e4p2">Salvar el VI como <code>Array sobre Umbral.vi</code> en el directorio
+	  <code>C:\Exercises\LabVIEW Basics I</code>.
+	</para>
+	<para id="e4p3">Crear otro VI que genere un array de números aleatorios
+	  entre 0 y 1 y haga uso del <code>Array sobre Umbral
+	  VI</code> para obtener un array con valores mayores de 
+	  0.5.
+	</para>
+	<para id="e4p4">Salvar el VI como <code>Usando Array sobre Umbral.vi</code> en el directorio
+	  <code>C:\Exercises\LabVIEW Basics I</code>.
+	</para>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

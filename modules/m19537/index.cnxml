@@ -1,0 +1,125 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>VI Ejercicio con Formula Node</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>e059d4a9-54a1-42ad-9bae-a3d24a845eed</md:uuid>
+</metadata>
+  <!--When CXNML 0.6 comes out, this module will need to be revised to
+  include para in the items indicated.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm1203024">
+	<section id="s1">
+	  <title>Panel Frontal</title>
+	  <list id="s1l1" list-type="enumerated"><item>
+	      Abrir un VI en blanco y construir el panel frontal mostrado en la <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idm1457344" alt=""><image src="../../media/formulaexer.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+  </list>
+	</section>
+	<section id="s2">
+	  <title>Diagrama de Bloques</title>
+	  <list id="s2l1" list-type="enumerated"><item>
+	      Construir el diagrama de bloques mostrado en la <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idp1624480" alt=""><image src="../../media/formulaexerbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated"><item>
+		  Colocar en el diagrama de bloques el <code>Formula Node</code>, situado en la paleta
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Structures</code>.
+		</item>
+		<item>
+		  Crear el terminal de entrada <code>x</code> haciendo clic con el botón derecho del ratón sobre
+		 el borde izquierdo y seleccionando <code>Add Input</code> en el menú contextual. Escribe
+		  <code>x</code> en la caja que aparece.
+		</item>
+		<item>
+		  Crear los terminales de salida <code>y</code> y <code>a</code> haciendo clic con el botón derecho del ratón sobre
+		 el borde izquierdo y seleccionando <code>Add Output</code> en el menú contextual. Escribir
+		  <code>y</code> y <code>a</code> respectivamente, en las cajas que aparecen. Hay que
+		  crear terminales de salida para las variables temporales como <m:math><m:ci>a</m:ci></m:math>.
+		  <note id="idm6803792">
+		    Cuando se crea un terminal de entrada o de salida, se tiene que usar para la variable el mismo nombre que el que se ha usado
+		    en la ecuación. Los nombres de variable son sensibles a mayúsculas y minúsculas.
+		  </note>
+		</item>
+		<item>
+		  Escribir las siguientes ecuaciones en el <code>Formula
+		  Node</code>, donde <code>**</code> es el operador exponencial.
+		Consultar la ayuda de <cite><cite-title>LabVIEW</cite-title></cite> para una 
+	mayor información sobre la sintaxis de los <code>Formula Node</code>.
+		  <code display="block" id="idp98576">
+		    a = tanh(x) + cos(x);
+		    y = a**3 + a;
+		  </code>
+		</item>
+		<item>
+		  Completar el diagrama de bloques según se muestra en la <link target-id="s2l1f1"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Salvar el VI como <code>Ejercicio Formula Node.vi</code> en el directorio <code>C:\Exercises\ LabVIEW Basics I</code>.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Ejecutar el VI</title>
+	  <list id="s3l1" list-type="enumerated"><item><!--needs para-->
+	      <!--para-->
+	      Mostrar el panel frontal y ejecutar el VI. El gráfico muestra la representación de la ecuación 
+	      <m:math>
+		<m:apply>
+		  <m:eq/>
+		  <m:ci>y</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:ci type="fn">f</m:ci>
+			<m:ci>x</m:ci>
+		      </m:apply>
+		      <m:cn>3</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:ci type="fn">f</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:math>, donde 
+	      <m:math>
+		<m:apply>
+		  <m:eq/>
+		  <m:apply>
+		    <m:ci type="fn">f</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:tanh/>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:cos/>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:math>.
+	      <!--para-->
+	      Durante cada vuelta del bucle, el VI divide el terminal de contaje
+	      entre <code>15.0</code>. El cociente está unido al <code>Formula Node</code>, que calcula
+	      el valor de la función. El instrumento virtual dibuja el array como un gráfico.
+	    </item>
+	    <item>
+	      Cerrar el VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content> 
+</document>
